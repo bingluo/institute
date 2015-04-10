@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+ "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ADMIN">
+	<!-- 为类型定义别名 -->
+	<typeAlias alias="admin" type="cn.edu.seu.institute.entity.Admin" />
+	<!-- 定义resultMap,将query结果映射为bean -->
+	<resultMap id="AdminResultMap" class="admin">
+		<result property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="pswd" column="pswd"/>
+	</resultMap>
+	
+	<select id="selectAdminById" resultClass="admin" parameterClass="int">
+		<![CDATA[
+        	SELECT *
+        	FROM admin
+			WHERE id=#value#;
+		]]>
+	</select>
+	<select id="selectAdminByNameAndPswd" resultClass="admin" parameterClass="admin">
+		<![CDATA[
+        	SELECT *
+        	FROM admin
+			WHERE name = #name# and pswd = #pswd#;
+		]]>
+	</select>
+
+	<insert id="insertAdmin" parameterClass="admin">		
+		<![CDATA[
+        	INSERT INTO admin
+			(name, pswd)
+    		VALUES (#name#, #pswd#)
+		]]>
+	</insert>
+	
+	<update id="updateAdmin" parameterClass="admin">
+		<![CDATA[
+			UPDATE admin
+			SET pswd = #pswd#
+			WHERE id = #id# and name = #name#
+		]]>
+	</update>
+</sqlMap>

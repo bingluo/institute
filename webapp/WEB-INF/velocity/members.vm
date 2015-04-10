@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+#parse("common/head.vm")
+<body>
+
+<!-- Wrapper Start -->
+<div id="wrapper">
+
+<!-- Header
+================================================== -->
+
+<!-- 960 Container -->
+<div class="container ie-dropdown-fix">
+
+	#parse("common/header.vm")
+	
+	#parse("common/navigation.vm")
+
+</div>
+<!-- 960 Container / End -->
+
+<!-- Content
+================================================== -->
+
+<!-- 960 Container -->
+<div class="container" style="min-height: 600px;">
+
+	<div class="sixteen columns">
+	
+		<!-- Page Title -->
+		<div id="page-title">
+			<h2>关于学会<span> / 学会章程</span></h2>
+			<div id="bolded-line"></div>
+		</div>
+		<!-- Page Title / End -->
+	</div>
+	<div class="two columns">
+	<!-- Categories -->
+	<div class="widget first">
+		<div class="headline no-margin"><h4>关于学会</h4></div>
+			<ul class="links-list-alt">
+				<li class="cats"><a href="$!{viewUtil.contextPath}/rules.html">学会章程</a></li>
+				<li class="cats"><a href="$!{viewUtil.contextPath}/members.html" class="focus-a">理事成员</a></li>
+				<li class="cats"><a href="$!{viewUtil.contextPath}/contact.html">联系方式</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="ten columns">
+		<h2 class="article-title"><span>江苏省环境诱变剂学会第三届理事会成员名单</span><br/><span class="second-title">2005年12月12日</span></h2>
+		<div class="members" style="font-size:16px;">
+			<p>
+				<div class="duty-title">理事长：</div>
+				<div>浦跃朴</div>
+			</p>
+			<p>
+				<div class="duty-title">副理事长：</div>
+				<div>王心如、孔志明、陈森清、胡启之、童建</div>
+			</p>
+			<p>
+				<div class="duty-title">常务理事（11人）：</div>
+				<div>王心如、王民生、王亚平、尹立红、孔志明、陈森清、周建伟、胡启之、浦跃朴、龚瑞忠、童建</div>
+			</p>
+			<p>
+				<div class="duty-title">理事（22人）: </div>
+				<div>王心如、王民生、王亚平、尹立红、孔志明、陈森清、周建伟、胡启之、浦跃朴、龚瑞忠、童建、顾海鹰、刘维达、罗克勇、沈维干、曹建平、胡向阳、唐  萌、张晓梅、马国建、石根勇、孙玉洁</div>
+			</p>
+			<p>
+				<div class="duty-title">秘书长：</div>
+				<div>尹立红</div>
+			</p>
+			<p>
+				<div class="duty-title">副秘书长：</div>
+				<div>王民生、胡向阳、刘起展、沈孝兵</div>
+			</p>
+		</div>
+	</div>
+
+	#parse("common/siderList.vm")
+</div>
+<!-- 960 Container / End -->
+
+</div>
+<!-- Wrapper / End -->
+
+#parse("common/footer.vm")
+
+</body>
+</html>

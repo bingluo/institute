@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+
+<!-- Basic Page Needs
+================================================== -->
+<meta charset="utf-8" />
+<title>江苏省环境诱变剂学会-登录</title>
+
+	<!-- Mobile Specific
+	================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+	<!-- CSS
+	================================================== -->
+	<link rel="stylesheet" type="text/css" href="$!{viewUtil.contextPath}/static/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="$!{viewUtil.contextPath}/static/css/boxed.css" id="layout" />
+	<link rel="stylesheet" type="text/css" href="$!{viewUtil.contextPath}/static/css/colors/celadon.css" id="colors" />
+	
+	<!-- Java Script
+	================================================== -->
+	<script charset="utf-8" src="$!{viewUtil.contextPath}/static/js/jquery-1.8.js"></script>
+
+</head>
+<body>
+<div id="wrapper">
+	<div class="tab-content" id="tab1">
+		<form id="logForm" method="post" action="$!{viewUtil.contextPath}/admin/login">
+			<div class="field">
+				<label>用户名: <span>*</span></label>
+				<input name="name" type="text"></input>
+			</div>
+			<div class="field">
+				<label>密码: <span>*</span></label>
+				<input name="pswd" type="text"></input>
+		    </div>
+		    <div style="padding-top:20px;">
+		    	<input id="login" type="button" value="登录">
+		    </div>
+		</form>
+	</div>
+</div>
+</body>	
+	<script>
+		$(document).ready(function(){
+			$("#login").click(function(){
+				$("#logForm").submit();
+			});
+		});
+	</script>
+</html>

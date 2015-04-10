@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+ "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ARTICLE">
+	<!-- 为类型定义别名 -->
+	<typeAlias alias="article" type="cn.edu.seu.institute.entity.Article" />
+	<!-- 定义resultMap,将query结果映射为bean -->
+	<resultMap id="ArticleResultMap" class="article">
+		<result property="id" column="id"/>
+		<result property="categoryId" column="category_id"/>
+		<result property="title" column="title"/>
+		<result property="content" column="content"/>
+		<result property="postTime" column="post_time"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="archived" column="archived"/>
+	</resultMap>
+	
+	<select id="selectRecentArticlesByBaseAndRange" resultMap="ArticleResultMap" parameterClass="java.util.Map">
+		<![CDATA[
+        	SELECT * FROM
+    			(SELECT *
+            	FROM article
+    			WHERE category_id = #catId# and archived = 0
+    			ORDER BY update_time DESC) a
+			LIMIT #base#,#range#;
+		]]>
+	</select>
+
+	<select id="selectArticleCountByCategory" resultClass="int" parameterClass="int">
+		<![CDATA[
+        	SELECT count(*)
+        	FROM article
+			WHERE category_id = #value# AND archived = 0;
+		]]>
+	</select>
+	
+	<select id="selectArticleByArticleId" resultMap="ArticleResultMap" parameterClass="int">		
+		<![CDATA[
+        	SELECT *
+        	FROM article
+			WHERE id = #value# AND archived = 0
+		]]>
+	</select>
+
+	<insert id="insertArticle" parameterClass="article">		
+		<![CDATA[
+        	INSERT INTO article
+			(category_id, title, content, post_time, update_time)
+    		VALUES (#categoryId#, #title#, #content#, current_timestamp(), current_timestamp())
+		]]>
+	</insert>
+	
+	<update id="archiveArticle" parameterClass="int">
+		<![CDATA[
+			UPDATE article
+			SET archived = 1
+			WHERE id = #id#
+		]]>
+	</update>
+	
+	<update id="updateArticle" parameterClass="article">
+		<![CDATA[
+			UPDATE article
+			SET category_id = #categoryId#,
+			title = #title#,
+			content = #content#,
+			update_time = current_timestamp(),
+			WHERE id = #id#
+		]]>
+	</update>
+</sqlMap>

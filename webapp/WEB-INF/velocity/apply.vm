@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html><!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<title>江苏省环境诱变剂学会</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" type="text/css" href="$!{viewUtil.contextPath}/static/css/style.css" />
+<link rel="stylesheet" type="text/css" href="$!{viewUtil.contextPath}/static/css/boxed.css" id="layout" />
+<link rel="stylesheet" type="text/css" href="$!{viewUtil.contextPath}/static/css/colors/celadon.css" id="colors" />
+<script src="$!{viewUtil.contextPath}/static/js/jquery-1.8.js"></script>
+</head>
+<body>
+
+<!-- Wrapper Start -->
+<div id="wrapper">
+
+<!-- Header
+================================================== -->
+
+<!-- 960 Container -->
+<div class="container ie-dropdown-fix">
+
+	#parse("common/header.vm")
+	
+	#parse("common/navigation.vm")
+
+
+</div>
+<!-- 960 Container / End -->
+
+<!-- Content
+================================================== -->
+
+<!-- 960 Container -->
+<div class="container" style="min-height: 600px;">
+
+	<div class="sixteen columns">
+	
+		<!-- Page Title -->
+		<div id="page-title">
+			<h2>首页<span> / 会员申请</span></h2>
+			<div id="bolded-line"></div>
+		</div>
+		<!-- Page Title / End -->
+	</div>
+	<div class="three columns">
+	<!-- Categories -->
+	<div class="widget first">
+		<div class="headline no-margin"><h4>会员申请</h4></div>
+			<ul class="links-list-alt">
+				<li class="cats"><a href="$!{viewUtil.contextPath}/apply.html" class="focus-a">会员申请</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- Standard Structure -->
+	<div class="nine columns">
+		<div class="widget first">
+			<div class="headline no-margin">
+				<h4>第一步：下载会员申请表</h4>
+			</div>
+			<div>
+				<i class="mini-ico-tag"></i> <a href="$!{viewUtil.contextPath}/static/documents/individual_member_application_form.doc">个人会员申请表.doc</a>
+				<div class="post-meta">
+				</div>
+			</div>
+			<div>
+				<i class="mini-ico-tag"></i> <a href="$!{viewUtil.contextPath}/static/documents/group_member_application_form.doc">团体会员申请表.doc</a>
+				<div class="post-meta">
+				</div>
+			</div>
+			<div class="headline no-margin">
+				<h4>第二步：填写会员申请表</h4>
+			</div>
+			<div class="headline no-margin">
+				<h4>第三步：填写基本信息，上传会员申请表</h4>
+			</div>
+			<form id="apply-form" style="height:auto;padding-bottom:50px;" class="apply-form" method="post" action="$!{viewUtil.contextPath}/apply.html" enctype="multipart/form-data">
+				<div class="field">
+					<label>姓名: <span>*</span></label>
+					<input type="text" name="name" class="text">
+				</div>
+				<div class="field">
+					<label>电话: <span>*</span></label>
+					<input type="text" name="phone" class="text">
+				</div>
+				<div class="field">
+					<label>邮箱: <span>*</span></label>
+					<input type="text" name="mail" class="text">
+				</div>
+				<div class="field">
+					<label>会员申请表: <span>*</span></label>
+					<input type="file" name="file" class="text" accept="application/msword">
+				</div>
+				<div class="field">
+					<input id="confirmBtn" type="button" value="确定">
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- Standard Structure End -->
+	
+	#parse("common/siderList.vm")
+	
+</div>
+<!-- 960 Container / End -->
+</div>
+<!-- Wrapper / End -->
+
+#parse("common/footer.vm")
+
+</body>
+<script>
+	$(document).ready(function(){
+		$("#confirmBtn").click(function(){
+			alert("提交成功，清等待处理。");
+			$("#apply-form").submit();
+		});
+	});
+</script>
+</html>

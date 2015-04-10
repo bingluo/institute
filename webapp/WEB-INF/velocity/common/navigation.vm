@@ -1,0 +1,20 @@
+	<!-- Navigation -->
+	<div class="sixteen columns">
+		<div id="navigation">
+			<ul id="nav">
+				<li><a href="$!{viewUtil.contextPath}/default.html">首页</a></li>
+				<li><a href="$!{viewUtil.contextPath}/rules.html">关于学会</a>
+					<ul>
+						<li><a href="$!{viewUtil.contextPath}/rules.html">学会章程</a></li>
+						<li><a href="$!{viewUtil.contextPath}/members.html">理事成员</a></li>
+						<li><a href="$!{viewUtil.contextPath}/contact.html">联系方式</a></li>
+					</ul>
+				</li>
+				<li><a href="$!{viewUtil.contextPath}/notice.html">学会通知</a></li>
+				<li><a href="$!{viewUtil.contextPath}/document.html">学会文件</a></li>
+				<li><a href="$!{viewUtil.contextPath}/apply.html">会员申请</a></li>
+			</ul>
+		</div> 
+		<div class="clear"></div>
+	</div>
+	<!-- Navigation / End -->

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+ "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="APPLICATION">
+	<!-- 为类型定义别名 -->
+	<typeAlias alias="application" type="cn.edu.seu.institute.entity.Application" />
+	<!-- 定义resultMap,将query结果映射为bean -->
+	<resultMap id="ApplicationResultMap" class="application">
+		<result property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="phone" column="phone"/>
+		<result property="mail" column="mail"/>
+		<result property="filename" column="filename"/>
+		<result property="directory" column="hashed_directory"/>
+		<result property="applyTime" column="apply_time"/>
+		<result property="dealed" column="dealed"/>
+	</resultMap>
+	
+	<select id="selectApplicationByBaseAndRange" resultMap="ApplicationResultMap" parameterClass="java.util.Map">
+		<![CDATA[
+        	SELECT * FROM
+    			(SELECT *
+            	FROM application
+    			ORDER BY apply_time DESC) a
+			LIMIT #base#,#range#;
+		]]>
+	</select>
+
+	<select id="selectApplicationCount" resultClass="int">
+		<![CDATA[
+        	SELECT count(*)
+        	FROM application;
+		]]>
+	</select>
+	
+	<select id="selectApplications" resultClass="application">
+		<![CDATA[
+        	SELECT *
+        	FROM application
+			WHERE id=#value#
+			ORDER BY apply_time DESC;
+		]]>
+	</select>
+	
+	<select id="selectApplicationById" resultClass="application" parameterClass="int">
+		<![CDATA[
+        	SELECT *
+        	FROM application
+			WHERE id=#value#;
+		]]>
+	</select>
+	<select id="selectApplicationByName" resultClass="application" parameterClass="java.lang.String">
+		<![CDATA[
+        	SELECT *
+        	FROM application
+			WHERE name = #name#;
+		]]>
+	</select>
+
+	<insert id="insertApplication" parameterClass="application">		
+		<![CDATA[
+        	INSERT INTO application
+			(name, phone, mail, filename, hashed_directory, apply_time)
+    		VALUES (#name#, #phone#, #mail#, #filename#, #directory#, current_timestamp());
+		]]>
+	</insert>
+	
+	<update id="updateApplication" parameterClass="application">
+		<![CDATA[
+			UPDATE admin
+			SET name=#name#,
+			phone=#phone#,
+			mail=#mail#,
+			filename=#filename#,
+			hashed_directory=#directory#,
+			dealed=#dealed#
+			WHERE id = #id#
+		]]>
+	</update>
+</sqlMap>

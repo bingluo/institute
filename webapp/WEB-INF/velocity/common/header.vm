@@ -1,0 +1,30 @@
+	<!-- Header -->
+	<div id="header">
+
+		<!-- Logo -->
+		<div class="eight columns">
+			<div id="logo" style="margin-top:0;">
+				<a href="$!{viewUtil.contextPath}/"><img src="$!{viewUtil.contextPath}/static/images/logo.jpg" alt="logo" style="width:140px;height:80px;"/></a>
+				<div>
+					<div id="tagline" style="font-size:26px;font-weight:bold;color:#56af8f;">江苏省环境诱变剂学会</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<!-- Social / Contact -->
+		<div class="eight columns">
+			<div class="clear"></div>
+			
+			<!-- Contact Details -->
+			<div id="contact-details">
+				<ul>
+					<li><i class="mini-ico-envelope"></i>jsems@seu.edu.cn</li>
+					<li><i class="mini-ico-user"></i>025-83272583</li>
+				</ul>
+			</div>
+
+		</div>
+
+	</div>
+	<!-- Header / End -->

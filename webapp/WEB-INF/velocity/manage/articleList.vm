@@ -1,0 +1,51 @@
+		<div class="widget first">
+			<div class="headline no-margin">
+				<h4>通知列表</h4>
+			</div>
+			#foreach ($notice in $articleList)
+			<div class="post">
+				<div class="post-content">
+					<div class="post-title">
+						<a href="$!{viewUtil.contextPath}/viewNotice-$!{notice.id}.html">$!{notice.title}</a>
+					</div>
+					<div class="post-meta">
+						<span><a href="$!{viewUtil.contextPath}/admin/deleteArticle-$!{notice.id}">删除</a></span>
+						<span><i class="mini-ico-calendar"></i>$!{viewUtil.fTime("$!{notice.postTime}")}</span>
+					</div>
+				</div>
+			</div>
+			#end
+		</div>
+		<div class="nine columns" style="float:right;">
+        	#if($pageCountA>1)
+           	<ul class="pagination">
+        		#if($pageIndexA<=5)
+        			#set($base = 1)
+        			#if($pageCountA<=10)
+        				#set($high = $pageCountA)
+        			#else
+        				#set($high = 10)
+        			#end
+        		#else
+    				<a href="$!{viewUtil.getContextPath()}$!{url}?pnA=1&tab=2"><li>首页</li></a>
+        			#set($base = $pageIndexA - 4)
+        			#if($pageCountA > $pageIndexA + 5)
+        				#set($high = $pageIndexA + 5)
+        			#else
+        				#set($high = $pageCountA)
+        			#end
+        		#end
+        		#foreach($i in [$base..$high])
+        			#if($pageIndexA!=$i)<a href="$!{viewUtil.getContextPath()}$!{url}?pnA=$i&tab=2">#end
+        				<li #if($pageIndexA==$i)class="current"#end>$i</li>
+        			#if($pageIndexA!=$i)</a>#end
+        		#end
+        		#if($pageIndexA<$pageCountA)
+        			#set($next = $pageIndexA + 1)
+           		<a href="$!{viewUtil.getContextPath()}$!{url}?pnA=$!{next}&tab=2"><li>下一页></li></a>
+           		<a href="$!{viewUtil.getContextPath()}$!{url}?pnA=$!{pageCountA}&tab=2"><li>尾页</li></a>
+        		#end
+           	</ul>
+    		#end
+    		<div style="padding-top: 20px;">共 ${pageCountA} 页 ${articleCount} 条</div>
+		</div>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+ "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="FILE">
+	<!-- 为类型定义别名 -->
+	<typeAlias alias="file" type="cn.edu.seu.institute.entity.File" />
+	<!-- 定义resultMap,将query结果映射为bean -->
+	<resultMap id="FileResultMap" class="file">
+		<result property="id" column="id"/>
+		<result property="filename" column="filename"/>
+		<result property="directory" column="hashed_directory"/>
+		<result property="postTime" column="post_time"/>
+		<result property="archived" column="archived"/>
+	</resultMap>
+	
+	<select id="selectRecentFilesByBaseAndRange" resultMap="FileResultMap" parameterClass="java.util.Map">
+		<![CDATA[
+        	SELECT * FROM
+    			(SELECT *
+            	FROM file
+    			WHERE archived = 0
+    			ORDER BY post_time DESC) a
+			LIMIT #base#,#range#;
+		]]>
+	</select>
+
+	<select id="selectFileCount" resultClass="int">
+		<![CDATA[
+        	SELECT count(*)
+        	FROM file
+			WHERE archived = 0;
+		]]>
+	</select>
+
+	<insert id="insertFile" parameterClass="file">		
+		<![CDATA[
+        	INSERT INTO file
+			(filename, hashed_directory, post_time)
+    		VALUES (#filename#, #directory#, current_timestamp())
+		]]>
+	</insert>
+	
+	<update id="archiveFile" parameterClass="int">
+		<![CDATA[
+			UPDATE file
+			SET archived = 1
+			WHERE id = #id#
+		]]>
+	</update>
+</sqlMap>

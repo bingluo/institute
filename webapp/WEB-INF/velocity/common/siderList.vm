@@ -1,0 +1,21 @@
+	<!-- right side bars -->
+	<div class="four columns">
+		<div class="headline no-margin"><h4>学会通知<a href="$!{viewUtil.contextPath}/notice.html"> >></a></h4></div>
+		<div class="side-list">
+			<ul class="arrow_list" >
+				#foreach ($noticeItem in $recentNotice)
+				<li><a href="$!{viewUtil.contextPath}/viewNotice-$!{noticeItem.id}.html">$!{noticeItem.title}</a></li>
+				#end
+			</ul>
+		</div>
+		
+		<div class="headline no-margin"><h4>学会文件<a href="$!{viewUtil.contextPath}/document.html"> >></a></h4></div>
+		<div class="side-list">
+			<ul class="arrow_list" >
+				#foreach ($fileItem in $recentFile)
+				<li><a href="$!{viewUtil.contextPath}/$!{fileItem.url}">$!{fileItem.filename}</a></li>
+				#end
+			</ul>
+		</div>
+	</div>
+	<!-- Standard Structure End -->

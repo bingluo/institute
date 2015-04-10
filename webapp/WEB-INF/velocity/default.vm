@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+#parse("common/head.vm")
+<body>
+
+<!-- Wrapper Start -->
+<div id="wrapper">
+
+<!-- Header
+================================================== -->
+
+<!-- 960 Container -->
+<div class="container ie-dropdown-fix">
+
+	#parse("common/header.vm")
+	
+	#parse("common/navigation.vm")
+
+</div>
+<!-- 960 Container / End -->
+
+<!-- Content
+================================================== -->
+
+<!-- 960 Container -->
+<div class="container">
+
+	<div class="sixteen columns">
+	
+		<!-- Page Title -->
+		<div id="page-title">
+			<h2>首页</h2>
+			<div id="bolded-line"></div>
+		</div>
+		<!-- Page Title / End -->
+
+	</div>
+</div>
+<!-- 960 Container / End -->
+
+
+<!-- 960 Container -->
+<div class="container"  style="min-height: 600px;">
+
+	<!-- Standard Structure -->
+	<div class="two-thirds column">
+		<div style="text-align:center;">
+			<h2>江苏省环境诱变剂学会</h2>
+			<h3>JIANGSU ENVIRONMENTAL MUTAGEN SOCIETY</h3>
+		</div>
+		<p style="text-indent:2em;">江苏省环境诱变剂学会成立于1994年，其宗旨是联合江苏省环境科学、遗传毒理学、肿瘤学、分子生物学等领域的研究和发展力量，使环境中致癌物质、致畸变物质和致突变物质的检测、防治以及它们的作用机理研究工作登上新的台阶，从而造福人类。</p>
+		<p style="text-indent:2em;">学会成立以来，始终以开展学术交流活动作为学会工作的核心。积极组织会员参加国际环境诱变剂学术会议以及中国环境诱变剂学术会议，组织论文进行学术交流。学会每二年举办一次学术报告会，邀请国内和省内知名专家作专题学术报告，举办多种类型学习班推广前沿技术。取得了良好的社会效益。</p>
+		<p style="text-indent:2em;">学会第一届和第二届理事长为薛开先教授，现任理事长为东南大学公共卫生学院浦跃朴教授。学会现有会员人数182人，会员来自东南大学，南京医科大学，苏州大学，江苏省肿瘤研究所，江苏省疾病与预防控制中心，国家环保局南京环境科学研究所，南京大学，南通大学，江苏大学，扬州大学，徐州医学院，徐州师范大学，中国医科院皮研所，中科院南京地理与湖泊研究所，常州环境监测中心站，江苏省计划生育科学技术研究所，江苏省农科院，江苏省农科院等单位。学会挂靠单位为东南大学公共卫生学院。</p>
+	</div>
+	
+	<div class="one-third column">
+		<div class="headline no-margin"><h4>会员申请</h4></div>
+
+		<!-- Large Notice -->
+		<div class="large-notice">
+			<h3>欢迎加入</h3>
+			<p>江苏环境诱变剂学会欢迎您的加入！</p>
+			<a href="/apply.html" class="button medium color">申请</a>
+		</div>
+		<p />
+	</div>
+	<!-- Standard Structure End -->
+
+</div>
+<!-- 960 Container End -->
+
+
+</div>
+<!-- Wrapper / End -->
+
+#parse("common/footer.vm")
+
+</body>
+</html>

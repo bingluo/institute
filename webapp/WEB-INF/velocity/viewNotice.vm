@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+#parse("common/head.vm")
+<body>
+
+<!-- Wrapper Start -->
+<div id="wrapper">
+
+<!-- Header
+================================================== -->
+
+<!-- 960 Container -->
+<div class="container ie-dropdown-fix">
+
+	#parse("common/header.vm")
+	
+	#parse("common/navigation.vm")
+
+</div>
+<!-- 960 Container / End -->
+
+<!-- Content
+================================================== -->
+
+<!-- 960 Container -->
+<div class="container" style="min-height: 600px;">
+
+	<div class="sixteen columns">
+	
+		<!-- Page Title -->
+		<div id="page-title">
+			<h2>首页<span> / 学会通知</span></h2>
+			<div id="bolded-line"></div>
+		</div>
+		<!-- Page Title / End -->
+	</div>
+	<div class="two columns">
+	<!-- Categories -->
+	<div class="widget first">
+		<div class="headline no-margin"><h4>学会通知</h4></div>
+			<ul class="links-list-alt">
+				<li class="cats"><a href="$!{viewUtil.contextPath}/notice.html" class="focus-a">学会通知</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- Standard Structure -->
+	<div class="ten columns">
+		<div class="post post-page" style="min-height:700px;border-bottom:1px solid #ddd;">
+			<!-- Post -->
+			<div class="post-content" style="margin:0px;">
+				<div class="post-title" style="text-align: center;"><h2>$!{notice.title}</h2></div>
+				<div class="post-meta" style="text-align: center;">
+					<span><i class="mini-ico-calendar"></i>$!{viewUtil.fTime("$!{notice.postTime}")}</span>
+					<!-- <span><i class="mini-ico-user"></i>来自  wfs413<span> -->
+				</div>
+				<div class="post-description">
+					<p>
+					$!{notice.content}
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Standard Structure End -->
+	
+	#parse("common/siderList.vm")
+</div>
+<!-- 960 Container / End -->
+</div>
+<!-- Wrapper / End -->
+
+#parse("common/footer.vm")
+
+</body>
+</html>

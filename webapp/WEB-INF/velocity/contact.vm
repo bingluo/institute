@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+#parse("common/head.vm")
+<body>
+
+<!-- Wrapper Start -->
+<div id="wrapper">
+
+<!-- Header
+================================================== -->
+
+<!-- 960 Container -->
+<div class="container ie-dropdown-fix">
+
+	#parse("common/header.vm")
+	
+	#parse("common/navigation.vm")
+
+</div>
+<!-- 960 Container / End -->
+
+<!-- Content
+================================================== -->
+
+<!-- 960 Container -->
+<div class="container" style="min-height: 600px;">
+
+	<div class="sixteen columns">
+	
+		<!-- Page Title -->
+		<div id="page-title">
+			<h2>关于学会<span> / 学会章程</span></h2>
+			<div id="bolded-line"></div>
+		</div>
+		<!-- Page Title / End -->
+	</div>
+	<div class="three columns">
+	<!-- Categories -->
+	<div class="widget first">
+		<div class="headline no-margin"><h4>关于学会</h4></div>
+			<ul class="links-list-alt">
+				<li class="cats"><a href="$!{viewUtil.contextPath}/rules.html">学会章程</a></li>
+				<li class="cats"><a href="$!{viewUtil.contextPath}/members.html">理事成员</a></li>
+				<li class="cats"><a href="$!{viewUtil.contextPath}/contact.html" class="focus-a">联系方式</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- Standard Structure -->
+	<div class="nine columns">
+		<h2 style="margin:0 0 16px 0;">江苏省环境诱变剂学会联系方式</h2>
+		<div class="contact-info">
+			<p>学会地址：南京市丁家桥87号东南大学公共卫生学院，210009</p>
+			<p>联系电话：025-83272583</p>
+			<p>联系人：尹立红教授</p>
+			<p>E-mail：jsems@seu.edu.cn</p>
+		</div>
+	</div>
+	<!-- Standard Structure End -->
+	
+	#parse("common/siderList.vm")
+</div>
+<!-- 960 Container / End -->
+
+</div>
+<!-- Wrapper / End -->
+
+#parse("common/footer.vm")
+
+</body>
+</html>
